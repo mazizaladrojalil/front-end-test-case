@@ -13,7 +13,7 @@ const DaftarLaporan = ({ isAdmin }) => {
   useEffect(() => {
     axios
       .get(
-        "https://node-js-test-case-backend-production.up.railway.app/api/programs"
+        `${process.env.REACT_APP_BACKEND_URL}/api/programs`
       )
       .then((response) => {
         setLaporan(response.data);
@@ -64,7 +64,7 @@ const DaftarLaporan = ({ isAdmin }) => {
   const handleSave = () => {
     axios
       .put(
-        `https://node-js-test-case-backend-production.up.railway.app/api/programs/${selectedLaporan.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/programs/${selectedLaporan.id}`,
         selectedLaporan
       )
       .then((response) => {
@@ -87,7 +87,7 @@ const DaftarLaporan = ({ isAdmin }) => {
     if (window.confirm("Apakah Anda yakin ingin menghapus laporan ini?")) {
       axios
         .delete(
-          `https://node-js-test-case-backend-production.up.railway.app/api/programs/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/api/programs/${id}`
         )
         .then(() => {
           // Remove the deleted item from the local state

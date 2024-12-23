@@ -92,10 +92,7 @@ const FormLaporanBantuan = () => {
       formData.bukti_penyaluran = formData.bukti_penyaluran.name;
       console.log("Form data:", formData);
       axios
-        .post(
-          "https://node-js-test-case-backend-production.up.railway.app/api/programs",
-          formData
-        )
+        .post(`${process.env.REACT_APP_BACKEND_URL}/api/programs`, formData)
         .then((response) => {
           console.log("Form submitted successfully:", response);
         })
@@ -273,10 +270,14 @@ const FormLaporanBantuan = () => {
               rows="3"
             />
           </div>
-          
-            <button type="submit" className="btn btn-primary" onSubmit={handleSubmit}>
-              Kirim
-            </button>
+
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onSubmit={handleSubmit}
+          >
+            Kirim
+          </button>
         </div>
       </form>
       {notification && (
