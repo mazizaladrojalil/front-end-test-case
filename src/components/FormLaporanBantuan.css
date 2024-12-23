@@ -1,0 +1,48 @@
+.group-1 {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #2a51ae;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+.group-1 > * {
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .group-1 {
+    width: 100%;  /* Full width on mobile */
+    flex-direction: column;  /* Stack elements vertically */
+    padding: 15px;  /* Adjust padding for mobile */
+  }
+
+  .group-1 > * {
+    width: 100%;  /* Child elements take full width on mobile */
+    margin-bottom: 15px;  /* Adds space between stacked elements */
+  }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) {
+  .group-1 {
+    width: 100%;  /* Full width on tablets */
+    padding: 18px;  /* Adjust padding for tablets */
+    margin-bottom: 20px;
+  }
+
+  .group-1 > * {
+    width: 100%;  /* Child elements take full width on tablets */
+    margin-bottom: 15px;  /* Adds space between elements */
+  }
+}

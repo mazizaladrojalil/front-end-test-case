@@ -1,0 +1,28 @@
+/* Gaya Umum */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.mobile-table {
+  font-size: 16px;
+}
+
+/* Gaya untuk Mobile */
+@media (max-width: 768px) {
+
+  .mobile-table tbody tr {
+    margin-bottom: 1rem;
+  }
+
+  .mobile-table tbody tr td {
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .mobile-table tbody tr td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+  }
+}
